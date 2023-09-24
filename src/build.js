@@ -3,12 +3,8 @@ function buildCard() {
 		.setFieldName('date')
 		.setTitle('Pick a date');
 
-	let cardSection1TimePicker1 = CardService.newTimePicker()
-		.setFieldName('Time')
-		.setTitle('Pick a time');
-
 	let cardSection1ButtonList1Button1Action1 = CardService.newAction()
-		.setFunctionName('createEvent')
+		.setFunctionName('handleButtonClick')
 		.setParameters({});
 
 	let cardSection1ButtonList1Button1 = CardService.newTextButton()
@@ -22,7 +18,6 @@ function buildCard() {
 
 	let cardSection1 = CardService.newCardSection()
 		.addWidget(cardSection1DatePicker1)
-		.addWidget(cardSection1TimePicker1)
 		.addWidget(cardSection1ButtonList1);
 
 	let card = CardService.newCardBuilder().addSection(cardSection1).build();
