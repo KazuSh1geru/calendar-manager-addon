@@ -9,3 +9,4 @@
 
 - [イベントオブジェクト](https://developers.google.com/apps-script/add-ons/concepts/event-objects?hl=ja)
     - [カレンダー予定オブジェクト](https://developers.google.com/apps-script/reference/calendar/calendar-event?hl=ja)
+    - [イベント作成](https://developers.google.com/apps-script/reference/calendar/calendar#createEvent(String,Date,Date,Object))
