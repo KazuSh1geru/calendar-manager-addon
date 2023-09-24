@@ -1,19 +1,29 @@
 function buildCard() {
-	let cardSection1TextParagraph1 =
-		CardService.newTextParagraph().setText('デモアプリです!');
-
 	let cardSection1DatePicker1 = CardService.newDatePicker()
 		.setFieldName('date')
-		.setTitle('日付を指定できるよ！');
+		.setTitle('Pick a date');
 
 	let cardSection1TimePicker1 = CardService.newTimePicker()
 		.setFieldName('Time')
-		.setTitle('時間を指定できるよ！');
+		.setTitle('Pick a time');
+
+	let cardSection1ButtonList1Button1Action1 = CardService.newAction()
+		.setFunctionName('createEvent')
+		.setParameters({});
+
+	let cardSection1ButtonList1Button1 = CardService.newTextButton()
+		.setText('テストイベントを作成')
+		.setTextButtonStyle(CardService.TextButtonStyle.TEXT)
+		.setOnClickAction(cardSection1ButtonList1Button1Action1);
+
+	let cardSection1ButtonList1 = CardService.newButtonSet().addButton(
+		cardSection1ButtonList1Button1,
+	);
 
 	let cardSection1 = CardService.newCardSection()
-		.addWidget(cardSection1TextParagraph1)
 		.addWidget(cardSection1DatePicker1)
-		.addWidget(cardSection1TimePicker1);
+		.addWidget(cardSection1TimePicker1)
+		.addWidget(cardSection1ButtonList1);
 
 	let card = CardService.newCardBuilder().addSection(cardSection1).build();
 	return card;
@@ -22,3 +32,33 @@ function buildCard() {
 function onDefaultHomePageOpen() {
 	return buildCard();
 }
+// function buildSimpleCard(e) {
+// 	var buttonAction = CardService.newAction().setFunctionName(
+// 		'onAddAttendeesButtonClicked',
+// 	);
+// 	var button = CardService.newTextButton()
+// 		.setText('Add new attendee')
+// 		.setOnClickAction(buttonAction);
+
+// 	// Check the event object to determine if the user can add
+// 	// attendees and disable the button if not.
+// 	if (!e.calendar.capabilities.canAddAttendees) {
+// 		button.setDisabled(true);
+// 	}
+
+// 	// ...continue creating card sections and widgets, then create a Card
+// 	// object to add them to. Return the built Card object.
+// }
+
+// /**
+//  * Callback function for a button action. Adds attendees to the
+//  * Calendar event being edited.
+//  *
+//  * @param {Object} e The action event object.
+//  * @return {CalendarEventActionResponse}
+//  */
+// function onAddAttendeesButtonClicked(e) {
+// 	return CardService.newCalendarEventActionResponseBuilder()
+// 		.addAttendees(['kazushi.takakusagi@gmail.com'])
+// 		.build();
+// }

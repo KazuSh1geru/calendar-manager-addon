@@ -22,24 +22,17 @@
       ],
       "useLocaleFromApp": true
     },
-    "calendar": {},
-    "drive": {},
-    "gmail": {},
-    "docs": {},
-    "sheets": {},
-    "slides": {}
+    "calendar": {}
   },
   "oauthScopes": [
     "https://www.googleapis.com/auth/calendar.addons.execute",
-    "https://www.googleapis.com/auth/drive.addons.metadata.readonly",
-    "https://www.googleapis.com/auth/userinfo.email",
-    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/calendar.addons.current.event.read",
+    "https://www.googleapis.com/auth/calendar.addons.current.event.write",
     "https://www.googleapis.com/auth/script.locale",
-    "https://www.googleapis.com/auth/script.scriptapp",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/documents.currentonly",
-    "https://www.googleapis.com/auth/spreadsheets.currentonly",
-    "https://www.googleapis.com/auth/presentations.currentonly"
+    "https://www.googleapis.com/auth/calendar.readonly",
+    "https://www.google.com/calendar/feeds",
+    "https://www.googleapis.com/auth/calendar",
+    "https://www.googleapis.com/auth/userinfo.email"
   ],
   "urlFetchWhitelist": []
 }
