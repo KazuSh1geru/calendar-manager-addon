@@ -1,4 +1,7 @@
-function buildCard() {
+// 仮定としてCardServiceに対する型定義を行います。実際には適切な型定義を行う必要があります。
+declare const CardService: any;
+
+function buildCard(): GoogleAppsScript.Card_Service.Card {
 	let cardSection1DatePTimePicker1 = CardService.newDateTimePicker()
 		.setFieldName('startDatetime')
 		.setTitle('開始日を指定していください！');
