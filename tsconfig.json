@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "lib": [],
+		"strict": true,
+		"exactOptionalPropertyTypes": true,
+    }
+}
