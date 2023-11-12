@@ -11,7 +11,7 @@ function buildCard(): GoogleAppsScript.Card_Service.Card {
 		.setTitle('終了日を記入してください！');
 
 	let cardSection1ButtonList1Button1Action1 = CardService.newAction()
-		.setFunctionName('handleButtonClick')
+		.setFunctionName('handleCreateSchedule')
 		.setParameters({});
 
 	let cardSection1ButtonList1Button1 = CardService.newTextButton()

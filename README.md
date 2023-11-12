@@ -1,5 +1,10 @@
 # calendar-manager-addon
 
+## 用語
+- ActionEvent: ユーザーのクリックなどのアクションによって発生するイベント
+- Schedule: カレンダーの予定（カレンダーオブジェクト）
+
+
 ## 参照ドキュメント
 - [カードについて- 公式ドキュメント](https://developers.google.com/apps-script/add-ons/concepts/cards?hl=ja)
 
