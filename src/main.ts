@@ -1,3 +1,3 @@
 function onDefaultHomePageOpen() {
-	return buildCard();
+  return buildCard();
 }
