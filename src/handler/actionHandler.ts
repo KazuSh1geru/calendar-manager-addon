@@ -35,9 +35,6 @@ abstract class BaseActionHandler<T extends ActionEvent<any, any>>
     try {
       return this.handleEvent(e);
     } catch (error) {
-      if (error instanceof Error) {
-        AccessLogger.unexpectedErrorLog(error);
-      }
       throw error;
     }
   }

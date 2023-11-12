@@ -5,8 +5,7 @@
   "addOns": {
     "common": {
       "homepageTrigger": {
-        "runFunction": "onDefaultHomePageOpen",
-        "enabled": true
+        "runFunction": "onDefaultHomePageOpen"
       },
       "layoutProperties": {
         "primaryColor": "#673ab7",

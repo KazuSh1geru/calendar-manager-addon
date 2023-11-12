@@ -7,14 +7,19 @@ type HandleCreateScheduleActionEvent = ActionEvent<
 >;
 
 class CreateScheduleHandler extends BaseActionHandler<HandleCreateScheduleActionEvent> {
-  constructor(private scheduleRepository: ScheduleRepository) {
-    super();
+  constructor(
+	private scheduleRepository: ScheduleRepository,
+	private renderer: NewSchedulePageRenderer,
+  ) {
+      super();
   }
 
-  handleEvent(e: HandleCreateScheduleActionEvent): Schedule | undefined {
-    const schedule = this.toSchedule(e);
-    const createdSchedule = this.scheduleRepository.create(schedule);
-    return createdSchedule;
+  protected handleEvent(e: HandleCreateScheduleActionEvent): GoogleAppsScript.Card_Service.ActionResponse {
+    console.log('HandleCreateScheduleActionEvent', e);
+	const schedule = this.toSchedule(e);
+    this.scheduleRepository.create(schedule);
+	const ActionResponse= this.renderer.renderPage();
+    return ActionResponse;
   }
 
   private toSchedule(e: HandleCreateScheduleActionEvent): Schedule {
@@ -41,7 +46,7 @@ class CreateScheduleHandler extends BaseActionHandler<HandleCreateScheduleAction
 
 function handleCreateSchedule(e: HandleCreateScheduleActionEvent) {
   const scheduleRepository = new DefaultScheduleRepository();
-  const handler = new CreateScheduleHandler(scheduleRepository);
-  const schedule = handler.handleEvent(e);
-  return schedule;
+  const renderer = new NewSchedulePageRenderer();
+  const handler = new CreateScheduleHandler(scheduleRepository, renderer);
+  return handler.handle(e);
 }
