@@ -9,12 +9,15 @@ abstract class BasePageRenderer<T> implements PageRenderer<T> {
     renderPage(args?: T): GoogleAppsScript.Card_Service.Card {
         try {
             const sections = this.renderSections(args);
-            sections.forEach(section => this.rootCard.addSection(section));
+            sections.forEach((section) => {
+                this.rootCard.addSection(section)
+            });
+            this.onOpen(args);
             return this.rootCard.build();
         } catch (error) {
             throw error;
         }
     }
     protected abstract renderSections(args?: T): GoogleAppsScript.Card_Service.CardSection[];
-    // protected onOpen(args?: T): void {}
+    protected onOpen(args?: T): void {}
 }

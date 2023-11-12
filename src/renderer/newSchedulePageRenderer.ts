@@ -1,4 +1,7 @@
 class NewSchedulePageRenderer extends BasePageRenderer<never> {
+  constructor () {
+    super();
+  }
   protected renderSections(): GoogleAppsScript.Card_Service.CardSection[] {
     const startDateTimePickerSection = this.dateTimePickerSection('startDatetime', '開始日を指定してください！');
     console.log('startDateTimePickerSection', startDateTimePickerSection);
